@@ -29,12 +29,7 @@ def main():
 
     st.title("Wildfire Damage Analysis")
     
-    st.write("
-        ## Introduction
-        This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm.
-        The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors.
-        The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.
-    ")
+    st.write("IntroductionThis dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.")
 
     # Rest of the app here
     # Display data, interactive widgets, visualizations, etc.
