@@ -41,6 +41,8 @@ st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_all
 st.write("The data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
 st.write(data)
 
+st.markdown(f"<h2 style='text-align: center;'>Data Transformations</h2>", unsafe_allow_html=True)
+
 ### Create Model for Total Dollar Damage
 TDD_log = np.log1p(data['Total Dollar Damage'])
 TDD = data['Total Dollar Damage']
