@@ -71,4 +71,6 @@ st.pyplot(plt)
 
 st.markdown(f"<h2 style='text-align: center;'>Sampling Techniques</h2>", unsafe_allow_html=True)
 
-
+col1, col2 = st.columns(2)
+with col1:
+    st.image("https://i.stack.imgur.com/nxgwe.png")
