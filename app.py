@@ -24,7 +24,6 @@ st.markdown(f"<h1 style='text-align: center;'>Wildfire Damage Analysis</h1>", un
     
 # Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
-    
 st.write("Introduction - This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.")
 
 # Rest of the app here
@@ -38,8 +37,8 @@ data['El Nino'] = data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
 data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
 data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 
-
-
+st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
+st.write("The data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
 st.write(data)
 
 ### Create Model for Total Dollar Damage
