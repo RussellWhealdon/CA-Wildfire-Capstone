@@ -20,7 +20,7 @@ background-size: cover;
 </style>
 """
 
-st.markdown(f"<h1 style='text-align: center;'>Wildfire Damage Analysis</h1>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align: center;'>California Wildfire Damage Analysis</h1>", unsafe_allow_html=True)
     
 # Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
