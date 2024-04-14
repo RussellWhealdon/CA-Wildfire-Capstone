@@ -20,7 +20,6 @@ background-size: cover;
 </style>
 """
 
-
 # Set page config
 st.set_page_config(page_title='Wildfire Damage Analysis', layout='wide')
     
@@ -43,4 +42,3 @@ data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 
 data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 
 st.write(data)
-
