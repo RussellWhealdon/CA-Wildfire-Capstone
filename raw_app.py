@@ -11,7 +11,7 @@ import lime
 import lime.lime_tabular
 
 #Load in data
-data = pd.read_excel('climateprojdata_v2 (1).xlsx')
+data = pd.read_excel('climateprojdata_final.xlsx')
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
 data['El Nino'] = data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
