@@ -25,13 +25,16 @@ def main():
     st.set_page_config(page_title='Wildfire Damage Analysis', layout='wide')
     
     # Introduction section
-    st.markdown('<div class="big-font">Wildfire Damage Analysis Dashboard</div>', unsafe_allow_html=True)
-    st.markdown("""
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+    st.title("Wildfire Damage Analysis")
+    
+    st.write("
         ## Introduction
         This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm.
         The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors.
         The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.
-    """)
+    ")
 
     # Rest of the app here
     # Display data, interactive widgets, visualizations, etc.
