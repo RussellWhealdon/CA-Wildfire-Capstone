@@ -11,12 +11,22 @@ import shap
 import lime
 import lime.lime_tabular
 
-def gradient(color1, color2, color3, content1, content2):
-    # Create an HTML structure with styling for a gradient header
-    st.markdown(f'<h1 style="text-align:center;background-image: linear-gradient(to right, {color1}, {color2}); font-size:60px; border-radius:2%;">'
-                f'<span style="color:{color3};">{content1}</span><br>'
-                f'<span style="color:white; font-size:17px;">{content2}</span></h1>',
-                unsafe_allow_html=True)
+def set_full_page_gradient(color1, color2):
+    # Set the full page background to a gradient
+    st.markdown(f"""
+        <style>
+        body {{
+            color: #fff;  # Sets the text color to white, change as necessary
+            background-image: linear-gradient(to right, {color1}, {color2});
+        }}
+        .reportview-container .main .block-container{{
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            color: #fff;  # Sets the text color for the content in the container to white, change as necessary
+            background-color: transparent;
+        }}
+        </style>
+        """, unsafe_allow_html=True)
 
 def main():
     # Set page config
@@ -41,7 +51,10 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-    gradient('#6a0dad', '#9932cc', '#ffffff', 'Wildfire Damage Analysis', 'An in-depth look at the economic impact of wildfires')
+    set_full_page_gradient('#6a0dad', '#9932cc')
+    st.title('Wildfire Damage Analysis')
+    st.write('This dashboard presents an analysis of the economic impacts of wildfires...')
+
 
     # Introduction section
     st.markdown('<div class="big-font">Wildfire Damage Analysis Dashboard</div>', unsafe_allow_html=True)
