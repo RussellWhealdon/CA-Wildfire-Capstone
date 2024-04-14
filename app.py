@@ -14,7 +14,7 @@ import lime.lime_tabular
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-image: url("https://source.unsplash.com/purple-white-and-orange-light-tZCrFpSNiIQ");
+background-image: url("https://source.unsplash.com/white-textile-on-brown-wooden-table-gbhSDkV96vg");
 background-size: cover;
 }
 </style>
