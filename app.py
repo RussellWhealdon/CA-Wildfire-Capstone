@@ -39,3 +39,29 @@ data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 
 data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 
 st.write(data)
+
+### Create Model for Total Dollar Damage
+TDD_log = np.log1p(data['Total Dollar Damage'])
+TDD = data['Total Dollar Damage']
+
+# Create a figure with two subplots
+plt.figure(figsize=(20, 6))
+
+# Subplot for Normal Data
+plt.subplot(1, 2, 1)  # 1 row, 2 columns, first plot
+plt.hist(TDD, bins=100, color='red', alpha=0.7)
+plt.title('Distribution of Total Dollar Damage')
+plt.xlabel('Total Dollar Damage')
+plt.ylabel('Frequency')
+plt.grid(True)
+
+# Subplot Transformed Data
+plt.subplot(1, 2, 2)  # 1 row, 2 columns, second plot
+plt.hist(TDD_log, bins=100, color='green', alpha=0.7)
+plt.title('Distribution of Log of Total Dollar Damage')
+plt.xlabel('Log of Total Dollar Damage')
+plt.ylabel('Frequency')
+plt.grid(True)
+
+# Display subplots
+st.pyplot(plt)
