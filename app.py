@@ -11,27 +11,18 @@ import shap
 import lime
 import lime.lime_tabular
 
-def set_full_page_gradient(color1, color2):
-    # Set the full page background to a gradient
-    st.markdown(f"""
-        <style>
-        body {{
-            color: #fff;  # Sets the text color to white, change as necessary
-            background-image: linear-gradient(to right, {color1}, {color2});
-        }}
-        .reportview-container .main .block-container{{
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-            color: #fff;  # Sets the text color for the content in the container to white, change as necessary
-            background-color: transparent;
-        }}
-        </style>
-        """, unsafe_allow_html=True)
+page_bg_img = """
+<style>
+[data-testid="stAppViewContainer"]{
+background-image: url("")
+background-size: cover;
+}
+</style>
+"""
 
 def main():
     # Set page config
     st.set_page_config(page_title='Wildfire Damage Analysis', layout='wide')
-    set_full_page_gradient('#6a0dad', '#9932cc')
     
     # Introduction section
     st.markdown('<div class="big-font">Wildfire Damage Analysis Dashboard</div>', unsafe_allow_html=True)
