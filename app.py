@@ -69,4 +69,6 @@ plt.grid(True)
 # Display subplots
 st.pyplot(plt)
 
+st.markdown(f"<h2 style='text-align: center;'>Sampling Techniques</h2>", unsafe_allow_html=True)
+
 
