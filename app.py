@@ -19,9 +19,6 @@ background-size: cover;
 }
 </style>
 """
-
-# Set page config
-st.set_page_config(page_title='Wildfire Damage Analysis', layout='wide')
     
 # Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
