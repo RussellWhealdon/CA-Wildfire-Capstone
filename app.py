@@ -31,31 +31,8 @@ def set_full_page_gradient(color1, color2):
 def main():
     # Set page config
     st.set_page_config(page_title='Wildfire Damage Analysis', layout='wide')
-
-    # Custom CSS to inject larger fonts and a purple background.
-    st.markdown("""
-        <style>
-        .reportview-container {
-            background-color: #a333c8;
-            color: #ffffff;
-        }
-        .markdown-text-container {
-            font-family: 'Helvetica';
-            font-size: 20px;
-            color: #ffffff;
-        }
-        .big-font {
-            font-size:30px !important;
-            font-weight: bold;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
     set_full_page_gradient('#6a0dad', '#9932cc')
-    st.title('Wildfire Damage Analysis')
-    st.write('This dashboard presents an analysis of the economic impacts of wildfires...')
-
-
+    
     # Introduction section
     st.markdown('<div class="big-font">Wildfire Damage Analysis Dashboard</div>', unsafe_allow_html=True)
     st.markdown("""
