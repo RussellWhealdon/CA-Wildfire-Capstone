@@ -39,9 +39,21 @@ model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 model_data['El Nino'] = model_data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
 model_data = model_data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
 model_data = model_data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
+model_data["Year"] = 
 
 st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
-st.write("The model_data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
+st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
+st.write("Sources include:")
+st.markdown("- Item 1")
+st.markdown("- Item 2")
+st.markdown("- Item 3")
+st.markdown('''
+<style>
+[data-testid="stMarkdownContainer"] ul{
+    list-style-position: inside;
+}
+</style>
+''', unsafe_allow_html=True)
 with st.expander("See Data Preview"):
     st.write(raw_data)
 
