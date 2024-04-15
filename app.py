@@ -44,9 +44,9 @@ raw_data["Year"] = raw_data["Year"].astype(str)
 st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
 st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
 st.write("Sources include:")
-st.markdown("- Item 1")
-st.markdown("- Item 2")
-st.markdown("- Item 3")
+st.markdown("- CA Gov - State of California, for Detailed wildfire data including causes, size of fires, and damages")
+st.markdown("- NRI - FEMA’s National Risk Index, for general overview of the areas at risk of wildfires relative to the entire nation")
+st.markdown("- NCEI & NOAA, for environmental data including rainfall, temperature, and weather patterns.")
 st.markdown('''
 <style>
 [data-testid="stMarkdownContainer"] ul{
