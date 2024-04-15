@@ -36,20 +36,20 @@ raw_data = pd.read_csv('Data/ClimateProjData.csv')
 model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
-data['El Nino'] = data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
-model_data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
-model_data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
+model_data['El Nino'] = model_data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
+model_data = model_data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
+model_data = model_data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 
 st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
 st.write("The model_data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
 with st.expander("See Data Preview"):
     st.write(raw_data)
 
-st.markdown(f"<h2 style='text-align: center;'>model_data Transformations</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align: center;'>Data Transformations</h2>", unsafe_allow_html=True)
 
 ### Create Model for Total Dollar Damage
-TDD_log = np.log1p(data['Total Dollar Damage'])
-TDD = data['Total Dollar Damage']
+TDD_log = np.log1p(model_data['Total Dollar Damage'])
+TDD = model_data['Total Dollar Damage']
 
 # Create a figure with two subplots
 plt.figure(figsize=(20, 6))
@@ -86,8 +86,8 @@ with col2:
     code = '''tscv = TimeSeriesSplit(n_splits=4)
 
     #Move Year to the index column so I can use it in future analysis but not include it as a feature in the model (inappropriate for this type of modeling)
-    model_data = data.sort_values(by='Year')
-    model_data = data.set_index('Year')
+    model_data = model_data.sort_values(by='Year')
+    model_data = model_data.set_index('Year')
 
     ## Model Training and sampling process
     # Sample model_data through TimeSeriesSplit (Implementation of Walk forward validation)
@@ -95,7 +95,7 @@ with col2:
     # Save the best model
 
     # Iterate through each split in the time series
-    for train_index, test_index in tscv.split(data):
+    for train_index, test_index in tscv.split(model_data):
     ...'''
     st.markdown(f"<h2 style='text-align: center;'>Implementation</h2>", unsafe_allow_html=True)
     st.code(code, language='python')
