@@ -58,7 +58,7 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 with st.expander("See Data Preview"):
     st.write(raw_data)
-with st.expander("See Data Dictionary:"):
+with st.expander("See Data Dictionary"):
     st.write(data_dictionary)
 
 st.markdown(f"<h2 style='text-align: center;'>Data Transformations</h2>", unsafe_allow_html=True)
