@@ -81,4 +81,19 @@ with col1:
     st.image("https://i.stack.imgur.com/nxgwe.png")
 
 with col2:
-    st.write("In action")
+    code = '''tscv = TimeSeriesSplit(n_splits=4)
+
+    #Move Year to the index column so I can use it in future analysis but not include it as a feature in the model (inappropriate for this type of modeling)
+    data = data.sort_values(by='Year')
+    data = data.set_index('Year')
+
+    ## Model Training and sampling process
+    # Sample data through TimeSeriesSplit (Implementation of Walk forward validation)
+    # Train model w/ Grid Search for best params
+    # Save the best model
+
+    # Iterate through each split in the time series
+    for train_index, test_index in tscv.split(data):
+    ...'''
+    st.markdown(f"<h2 style='text-align: center;'>Implementation</h2>", unsafe_allow_html=True)
+    st.code(code, language='python')
