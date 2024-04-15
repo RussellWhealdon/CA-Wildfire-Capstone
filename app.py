@@ -26,24 +26,26 @@ st.markdown(f"<h1 style='text-align: center;'>California Wildfire Damage Analysi
     
 # Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
-st.write("Introduction - This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.")
+st.write("Introduction - This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging model_data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for interpretability.")
 
 # Rest of the app here
 # Display data, interactive widgets, visualizations, etc.
 
 #Load in data
-data = pd.read_excel('Data/climateprojdata_final.xlsx')
+raw_data = pd.read_csv('Data/ClimateProjData.csv')
+model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
 data['El Nino'] = data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
-data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
-data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
+model_data = data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
+model_data = data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 
 st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
-st.write("The data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
-st.write(data)
+st.write("The model_data provided comes from the CA gov website that reports various reported characteristics of fires from around the state of California as well risk index metrics from the SOVI, NRI, and BRIC datasets.")
+with st.expander("See Data Preview"):
+    st.write(raw_data)
 
-st.markdown(f"<h2 style='text-align: center;'>Data Transformations</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align: center;'>model_data Transformations</h2>", unsafe_allow_html=True)
 
 ### Create Model for Total Dollar Damage
 TDD_log = np.log1p(data['Total Dollar Damage'])
@@ -77,18 +79,18 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown(f"<h2 style='text-align: center;'>Walk forward Validation</h2>", unsafe_allow_html=True)
-    st.write("Walk forward validation is a model validation technique used primarily in time series forecasting to ensure that the model is robust and performs well on unseen data. Unlike other cross-validation techniques that randomly shuffle data into training and testing sets, walk forward validation respects the chronological order of observations. This method involves incrementally 'walking' the cutoff point between the training and testing datasets forward in time, training the model on a fixed or expanding window of past data, and then testing it on the following data points. It mimics the real-world process of predicting future events based on past data, making it highly relevant for tasks such as financial forecasting, where the temporal sequence of data points is crucial. By using walk forward validation, one can more accurately gauge the predictive power of a time series model in practical scenarios, enhancing its reliability and effectiveness when deployed in dynamic environments.")
+    st.write("Walk forward validation is a model validation technique used primarily in time series forecasting to ensure that the model is robust and performs well on unseen data. Unlike other cross-validation techniques that randomly shuffle model_data into training and testing sets, walk forward validation respects the chronological order of observations. This method involves incrementally 'walking' the cutoff point between the training and testing datasets forward in time, training the model on a fixed or expanding window of past data, and then testing it on the following model_data points. It mimics the real-world process of predicting future events based on past data, making it highly relevant for tasks such as financial forecasting, where the temporal sequence of model_data points is crucial. By using walk forward validation, one can more accurately gauge the predictive power of a time series model in practical scenarios, enhancing its reliability and effectiveness when deployed in dynamic environments.")
     st.image("https://i.stack.imgur.com/nxgwe.png")
 
 with col2:
     code = '''tscv = TimeSeriesSplit(n_splits=4)
 
     #Move Year to the index column so I can use it in future analysis but not include it as a feature in the model (inappropriate for this type of modeling)
-    data = data.sort_values(by='Year')
-    data = data.set_index('Year')
+    model_data = data.sort_values(by='Year')
+    model_data = data.set_index('Year')
 
     ## Model Training and sampling process
-    # Sample data through TimeSeriesSplit (Implementation of Walk forward validation)
+    # Sample model_data through TimeSeriesSplit (Implementation of Walk forward validation)
     # Train model w/ Grid Search for best params
     # Save the best model
 
