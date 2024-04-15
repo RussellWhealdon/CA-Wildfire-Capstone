@@ -39,7 +39,7 @@ model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 model_data['El Nino'] = model_data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
 model_data = model_data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
 model_data = model_data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
-model_data["Year"] = model_data["Year"].astype(str)
+raw_data["Year"] = raw_data["Year"].astype(str)
 
 st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
 st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
