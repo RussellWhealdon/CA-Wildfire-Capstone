@@ -32,7 +32,7 @@ st.write("Introduction - This dashboard presents an analysis of the economic imp
 # Display data, interactive widgets, visualizations, etc.
 
 #Load in data
-data = pd.read_excel('climateprojdata_final.xlsx')
+data = pd.read_excel('Data/climateprojdata_final.xlsx')
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
 data['El Nino'] = data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
