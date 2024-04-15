@@ -1,0 +1,49 @@
+Value,Description,Source
+COUNTY,County where data is from,CAGov Wildfires Dataset
+Year,Year of data,CAGov Wildfires Dataset
+Total Dollar Damage,Dollar damage from wildfires,CAGov Wildfires Dataset
+Total Acres Burned,Acres burned from wildfires,CAGov Wildfires Dataset
+Arson,# of fires started by Arson,CAGov Wildfires Dataset
+Campfire,# of fires started by Campfire,CAGov Wildfires Dataset
+Debris Burning,# of fires started by Debris Burning,CAGov Wildfires Dataset
+Elec. Power,# of fires started by Elec. Power,CAGov Wildfires Dataset
+Equip. Use,# of fires started by Equip. Use,CAGov Wildfires Dataset
+Ltng.,# of fires started by Ltng.,CAGov Wildfires Dataset
+Misc.,# of fires started by Misc.,CAGov Wildfires Dataset
+P-W-F,# of fires started by P-W-F,CAGov Wildfires Dataset
+Rail- road,# of fires started by Rail- road,CAGov Wildfires Dataset
+Smoking,# of fires started by Smoking,CAGov Wildfires Dataset
+Undet.,# of fires started by Undet.,CAGov Wildfires Dataset
+Vehicle,# of fires started by Vehicle,CAGov Wildfires Dataset
+Total Fires,Total # of wildfires in that year,CAGov Wildfires Dataset
+.25 acres or <,# of fires of the size .25 acres or <,CAGov Wildfires Dataset
+.26-9.99 acres,# of fires of the size .26-9.99 acres,CAGov Wildfires Dataset
+10-99 acres,# of fires of the size 10-99 acres,CAGov Wildfires Dataset
+100-299 acres,# of fires of the size 100-299 acres,CAGov Wildfires Dataset
+300-999 acres,# of fires of the size 300-999 acres,CAGov Wildfires Dataset
+1000-4999 acres,# of fires of the size 1000-4999 acres,CAGov Wildfires Dataset
+5000 acres or >,# of fires of the size 5000 acres or >,CAGov Wildfires Dataset
+Population,Population of County in that year,Census.gov
+Prec_Value,Amount of rainfall,NCEI
+Prec_Rank,The year's rank for rainfall in comparsion to other years in that county,NCEI
+Prec_Anomaly,Rainfall anomaly in comparsion to other years,NCEI
+Prec_Mean(1901-2000),Mean rainfall 1901-2000,NCEI
+MT_Value,Average Max Temp for that year,NCEI
+MT_Rank,The year's rank for Max Temp in comparsion to other years in that county,NCEI
+MT_Anomaly,Max Temp anomaly in comparsion to other years,NCEI
+MT_Mean(1901-2000),Mean Max Temp 1901-2000,NCEI
+AT_Value,Average Temp Value for that year,NCEI
+AT_Rank,The year's rank for Avg Temp in comparsion to other years in that county,NCEI
+AT_Anomaly,Avg Temp anomaly in comparsion to other years,NCEI
+AT_Mean(1901-2000),Mean average temp 1901-2000,NCEI
+El Nino 5Y Avg,Past 5Y Average of El Nino index,NCEI
+El Nino Index,El Nino Index Value,NCEI
+BUILDVALUE,Building Value in the county,NRI
+AGRIVALUE,Agricultural Value in the county,NRI
+AREA,Total square acres of the county,NRI
+EAL_VALB,Expected Annual loss to buildings from natural disasters,NRI
+EAL_VALP,Expected Annual loss to people from natural disasters,NRI
+EAL_VALA,Expected Annual loss to agriculture from natural disasters,NRI
+RESL_SCORE,Resiliancy Score in the county,NRI
+LTNG_EALS,Lightning Risk Score,NRI
+WFIR_RISKS,Wildfire Risk Score,NRI
