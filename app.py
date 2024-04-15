@@ -75,5 +75,5 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown(f"<h2 style='text-align: center;'>Walk forward Validation</h2>", unsafe_allow_html=True)
-    st.write("Needed to control for the element of time but had no intention of forecasting, for this reason
+    st.write("Needed to control for the element of time but had no intention of forecasting, for this reason")
     st.image("https://i.stack.imgur.com/nxgwe.png")
