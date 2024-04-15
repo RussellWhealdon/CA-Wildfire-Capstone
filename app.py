@@ -35,6 +35,7 @@ st.write("This dashboard presents an analysis of the economic impacts of wildfir
 #Load in data
 raw_data = pd.read_csv('Data/ClimateProjData.csv')
 model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
+data_dictionary = pd.read_csv("Data/ClimateProjData - Dictionary.csv")
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
 model_data['El Nino'] = model_data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
