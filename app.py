@@ -11,6 +11,8 @@ import shap
 import lime
 import lime.lime_tabular
 
+st.set_page_config(page_title= f"CA Wildfire Dash",page_icon="🧑‍🚀",layout="wide")
+
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
