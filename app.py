@@ -61,7 +61,9 @@ with st.expander("See Data Preview"):
 with st.expander("See Data Dictionary"):
     st.write(data_dictionary)
 
-st.markdown(f"<h2 style='text-align: center;'>Data Transformations</h2>", unsafe_allow_html=True)
+
+st.markdown(f"<h2 style='text-align: center;'>Making the Model</h2>", unsafe_allow_html=True)
+st.subheader("Data Transformations")
 
 ### Create Model for Total Dollar Damage
 TDD_log = np.log1p(model_data['Total Dollar Damage'])
