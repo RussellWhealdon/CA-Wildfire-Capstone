@@ -96,7 +96,7 @@ st.subheader("Sampling Techniques")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown(f"<h2 style='text-align: center;'>Walk forward Validation</h2>", unsafe_allow_html=True)
+    st.subheader("Walk forward Validation")
     st.write("Walk forward validation is a model validation technique used primarily in time series forecasting to ensure that the model is robust and performs well on unseen data. Unlike other cross-validation techniques that randomly shuffle model_data into training and testing sets, walk forward validation respects the chronological order of observations. This method involves incrementally 'walking' the cutoff point between the training and testing datasets forward in time, training the model on a fixed or expanding window of past data, and then testing it on the following model_data points. It mimics the real-world process of predicting future events based on past data, making it highly relevant for tasks such as financial forecasting, where the temporal sequence of model_data points is crucial. By using walk forward validation, one can more accurately gauge the predictive power of a time series model in practical scenarios, enhancing its reliability and effectiveness when deployed in dynamic environments.")
     st.image("https://i.stack.imgur.com/nxgwe.png")
 
@@ -115,5 +115,5 @@ with col2:
     # Iterate through each split in the time series
     for train_index, test_index in tscv.split(model_data):
     ...'''
-    st.markdown(f"<h2 style='text-align: center;'>Implementation</h2>", unsafe_allow_html=True)
+    st.subheader("Implementation")
     st.code(code, language='python')
