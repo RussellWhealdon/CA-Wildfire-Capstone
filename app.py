@@ -42,7 +42,7 @@ model_data = model_data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'La
 model_data = model_data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
 raw_data["Year"] = raw_data["Year"].astype(str)
 
-st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
+st.subheader("Overview of Data")
 st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
 st.write("Sources include:")
 st.markdown("- CA Gov - State of California, for Detailed wildfire data including causes, size of fires, and damages")
