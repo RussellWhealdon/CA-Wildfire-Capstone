@@ -10,6 +10,7 @@ from sklearn.metrics import mean_absolute_error
 import shap
 import lime
 import lime.lime_tabular
+from joblib import load
 
 st.set_page_config(page_title= f"CA Wildfire Dash",page_icon="🧑‍🚀",layout="wide")
 
@@ -117,3 +118,57 @@ with col2:
     ...'''
     st.subheader("Implementation")
     st.code(code, language='python')
+
+tscv = TimeSeriesSplit(n_splits=4)
+
+#getting last train test split for display purposes
+count = 1
+for train_index, test_index in tscv.split(model_data):
+  count +=1
+  if count == 4:
+    training_index = train_index
+    testing_index = test_index
+
+st.subheader("Training the Model")
+train_data, test_data = model_data.iloc[train_index], model_data.iloc[test_index]
+
+# Extract features and target variable from training data
+X_train = train_data.drop('Total Dollar Damage', axis=1)
+y_train = train_data['Total Dollar Damage']
+
+# Apply the log transformation to the target variable
+y_train_log = np.log1p(train_data['Total Dollar Damage'])
+
+# Extract features and target variable from test data
+X_test = test_data.drop('Total Dollar Damage', axis=1)
+y_test = test_data['Total Dollar Damage']
+
+# Assign valid feature names to X_train and X_test DataFrames
+X_train.columns = valid_feature_names
+X_test.columns = valid_feature_names
+
+# Initialize the XGBoost model
+xgb_model_TDLog = load('final_modelTDLog.joblib')
+
+# Make predictions on the test data
+log_predictions = final_model_TDLog.predict(X_test)
+
+# Transform the predictions back to their original scale
+transformed_predictions = np.expm1(log_predictions)
+
+# Get the 'Year' for each entry in the test set
+years_test = data.iloc[test_index].index
+
+# Store the transformed predictions and actual values for evaluation
+all_transformed_predictions_TD.extend(transformed_predictions)
+all_actual_values_TD.extend(y_test)
+all_years.extend(years_test)
+
+# Calculate the absolute differences
+absolute_differences = [abs(all_actual_values_TD - all_transformed_predictions_TD) for all_actual_values_TD, all_transformed_predictions_TD in zip(all_actual_values_TD, all_transformed_predictions_TD)]
+
+# Calculate the median absolute error
+median_absolute_error = sorted(absolute_differences)[len(absolute_differences) // 2]
+
+# Print the result
+st.write("Median Absolute Error:", median_absolute_error)
