@@ -198,22 +198,20 @@ with col3:
 residuals_TD = [actual - predicted for actual, predicted in zip(all_actual_values_TD, all_transformed_predictions_TD)]
 residual_TDdf = pd.DataFrame({'Year': all_years, 'Actual': all_actual_values_TD, 'Predicted': all_transformed_predictions_TD, 'Residual': residuals_TD})
 
-# Plotting
-plt.figure(figsize=(10, 6))
-plt.scatter(all_transformed_predictions_TD, residuals_TD, alpha=0.5)
-plt.title('Residual Plot')
-plt.xlabel('Predicted Values')
-plt.ylabel('Residuals (Actual - Predicted)')
-plt.axhline(y=0, color='red', linestyle='--')  # Line at 0 to indicate no error
-
 with col4: 
+    # Plotting
+    plt.figure(figsize=(10, 6))
+    plt.scatter(all_transformed_predictions_TD, residuals_TD, alpha=0.5)
+    plt.title('Residual Plot')
+    plt.xlabel('Predicted Values')
+    plt.ylabel('Residuals (Actual - Predicted)')
+    plt.axhline(y=0, color='red', linestyle='--')  # Line at 0 to indicate no error
     st.subheader("Residual Plot: Actual over Residuals")
     st.pyplot(plt)
 
-residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
-plt.xlabel('Year')
-plt.ylabel('Mean Residual')
-
 with col5:
+    residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
+    plt.xlabel('Year')
+    plt.ylabel('Mean Residual')
     st.subheader("Residual Plot: Residuals YoY")
     st.pyplot(plt)
