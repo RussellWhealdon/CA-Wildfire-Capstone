@@ -186,3 +186,16 @@ median_absolute_error = sorted(absolute_differences)[len(absolute_differences) /
 
 # Print the result
 st.write("Median Absolute Error:", median_absolute_error)
+
+#Looking at Residuals and and actuals together
+residuals_TD = [actual - predicted for actual, predicted in zip(all_actual_values_TD, all_transformed_predictions_TD)]
+residual_TDdf = pd.DataFrame({'Year': all_years, 'Actual': all_actual_values_TD, 'Predicted': all_transformed_predictions_TD, 'Residual': residuals_TD})
+
+# Plotting
+plt.figure(figsize=(10, 6))
+plt.scatter(all_transformed_predictions_TD, residuals_TD, alpha=0.5)
+plt.title('Residual Plot')
+plt.xlabel('Predicted Values')
+plt.ylabel('Residuals (Actual - Predicted)')
+plt.axhline(y=0, color='red', linestyle='--')  # Line at 0 to indicate no error
+st.pyplot(plt)
