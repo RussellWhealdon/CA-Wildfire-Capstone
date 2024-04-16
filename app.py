@@ -161,7 +161,7 @@ X_train.columns = valid_feature_names
 X_test.columns = valid_feature_names
 
 # Initialize the XGBoost model
-xgb_model_TDLog = load('final_modelTDLog.joblib')
+final_model_TDLog = load('final_modelTDLog.joblib')
 
 # Make predictions on the test data
 log_predictions = final_model_TDLog.predict(X_test)
