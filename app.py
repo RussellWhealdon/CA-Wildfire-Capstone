@@ -214,7 +214,7 @@ st.subheader("Feature Importance Evaluation")
 col5, col6 = st.columns(2)
 
 with col5:
-    st.write("F-score")
+    st.subheader("F-score")
 
 with col6:
     xgb.plot_importance(final_model_TDLog, max_num_features=30)
