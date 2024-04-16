@@ -231,3 +231,27 @@ with col8:
     shap_values = explainer(X_train)
     shap.summary_plot(shap_values, X_train)
     st.pyplot(plt)
+
+col9, col10 = st.columns(2)
+with col9:
+    st.subheader("LIME Explanations")
+
+with col10:
+    # Initialize a LIME explainer
+    # Note: The training data (X_train) should be a numpy array for the LIME explainer
+    lime_explainer = lime.lime_tabular.LimeTabularExplainer(
+        training_data=X_train.values,
+        feature_names=X_train.columns,
+        class_names=['Target'],
+        mode='regression'
+    )
+
+    # Select an instance to explain
+    # For example, explaining the prediction for the first instance in the test set
+    instance = X_test.iloc[77]
+
+    # Generate the LIME explanation
+    exp = lime_explainer.explain_instance(instance.values, final_model_TDLog.predict)
+
+    # Show the explanation
+    exp.show_in_notebook(show_table=True)
