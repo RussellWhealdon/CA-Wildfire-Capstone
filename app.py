@@ -119,9 +119,19 @@ with col2:
     st.subheader("Implementation")
     st.code(code, language='python')
 
+#Set lists/col names for future use
+data_copy = model_data
+data_copy = model_data.drop(columns = ['Total Dollar Damage', 'Year'])
+valid_feature_names = data_copy.columns
+
+all_transformed_predictions_TD = []
+all_actual_values_TD = []
+all_years = []
+
+#Initialize Timeseries Split
 tscv = TimeSeriesSplit(n_splits=4)
 
-#getting last train test split for display purposes
+#Getting last train test split for display purposes
 count = 1
 for train_index, test_index in tscv.split(model_data):
   count +=1
