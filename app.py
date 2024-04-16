@@ -210,7 +210,7 @@ with col4:
     st.subheader("Residual Plot: Actual over Residuals")
     st.pyplot(plt)
 
-plt = residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
+residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
 plt.xlabel('Year')
 plt.ylabel('Mean Residual')
 
