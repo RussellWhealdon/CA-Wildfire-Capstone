@@ -157,7 +157,7 @@ log_predictions = final_model_TDLog.predict(X_test)
 transformed_predictions = np.expm1(log_predictions)
 
 # Get the 'Year' for each entry in the test set
-years_test = data.iloc[test_index].index
+years_test = model_data.iloc[test_index].index
 
 # Store the transformed predictions and actual values for evaluation
 all_transformed_predictions_TD.extend(transformed_predictions)
