@@ -219,3 +219,14 @@ with col5:
 with col6:
     xgb.plot_importance(final_model_TDLog, max_num_features=30)
     st.pyplot(plt)
+
+col7, col8 = st.columns(2)
+with col7:
+    st.subheader("Shapley Values")
+
+with col8:
+    # Create a SHAP explainer
+    explainer = shap.Explainer(final_model_TDLog)
+    # Compute SHAP values - this might take some time depending on the size of your data
+    shap_values = explainer(X_train)
+
