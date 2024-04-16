@@ -253,5 +253,8 @@ with col10:
     # Generate the LIME explanation
     exp = lime_explainer.explain_instance(instance.values, final_model_TDLog.predict)
 
-    # Show the explanation
-    exp.show_in_notebook(show_table=True)
+    # Get the HTML representation of the explanation
+    html_data = exp.as_html()
+
+    # Use Streamlit to display the HTML content
+    st.markdown(html_data, unsafe_allow_html=True)
