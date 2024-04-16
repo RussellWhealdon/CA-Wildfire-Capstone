@@ -173,6 +173,8 @@ transformed_predictions = np.expm1(log_predictions)
 # Get the 'Year' for each entry in the test set
 years_test = model_data.iloc[test_index].index
 
+
+###Evaluate error statistics and residual plots
 # Store the transformed predictions and actual values for evaluation
 all_transformed_predictions_TD.extend(transformed_predictions)
 all_actual_values_TD.extend(y_test)
@@ -184,8 +186,13 @@ absolute_differences = [abs(all_actual_values_TD - all_transformed_predictions_T
 # Calculate the median absolute error
 median_absolute_error = sorted(absolute_differences)[len(absolute_differences) // 2]
 
-# Print the result
-st.write("Median Absolute Error:", median_absolute_error)
+col3, col4, col5 = st.columns(3)
+
+with col3: 
+    # Show the result
+    st.subheader("Error Stats")
+    st.write("Median Absolute Error:", median_absolute_error)
+    st.write("Decided to use median absolute error due to large values of error stats. More traditional metrics like MSE were very large which made it hard to see improvements in the model")
 
 #Looking at Residuals and and actuals together
 residuals_TD = [actual - predicted for actual, predicted in zip(all_actual_values_TD, all_transformed_predictions_TD)]
@@ -198,4 +205,15 @@ plt.title('Residual Plot')
 plt.xlabel('Predicted Values')
 plt.ylabel('Residuals (Actual - Predicted)')
 plt.axhline(y=0, color='red', linestyle='--')  # Line at 0 to indicate no error
-st.pyplot(plt)
+
+with col4: 
+    st.subheader("Residual Plot: Actual over Residuals")
+    st.pyplot(plt)
+
+residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
+plt.xlabel('Year')
+plt.ylabel('Mean Residual')
+
+with col5:
+    st.subheader("Residual Plot: Residuals YoY")
+    st.pyplot(plt)
