@@ -186,7 +186,7 @@ absolute_differences = [abs(all_actual_values_TD - all_transformed_predictions_T
 # Calculate the median absolute error
 median_absolute_error = sorted(absolute_differences)[len(absolute_differences) // 2]
 
-col3, col4, col5 = st.columns(3)
+col3, col4 = st.columns(2)
 
 with col3: 
     # Show the result
