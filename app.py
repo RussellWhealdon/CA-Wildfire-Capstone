@@ -186,9 +186,9 @@ absolute_differences = [abs(all_actual_values_TD - all_transformed_predictions_T
 # Calculate the median absolute error
 median_absolute_error = sorted(absolute_differences)[len(absolute_differences) // 2]
 
-#col3, col4, col5 = st.columns(3)
+col3, col4, col5 = st.columns(3)
 
-with st.container() as col3: 
+with col3: 
     # Show the result
     st.subheader("Error Stats")
     st.write("Median Absolute Error:", median_absolute_error)
@@ -198,7 +198,7 @@ with st.container() as col3:
 residuals_TD = [actual - predicted for actual, predicted in zip(all_actual_values_TD, all_transformed_predictions_TD)]
 residual_TDdf = pd.DataFrame({'Year': all_years, 'Actual': all_actual_values_TD, 'Predicted': all_transformed_predictions_TD, 'Residual': residuals_TD})
 
-with st.container() as col4: 
+with col4: 
     # Plotting
     plt.figure(figsize=(10, 6))
     plt.scatter(all_transformed_predictions_TD, residuals_TD, alpha=0.5)
@@ -209,7 +209,7 @@ with st.container() as col4:
     st.subheader("Residual Plot: Actual over Residuals")
     st.pyplot(plt)
 
-with st.container() as col5:
+with col5:
     residual_TDdf.groupby('Year')['Residual'].mean().plot(kind='line', title='Mean Residuals Over Time')
     plt.xlabel('Year')
     plt.ylabel('Mean Residual')
