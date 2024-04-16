@@ -115,6 +115,7 @@ with col2:
 
     # Iterate through each split in the time series
     for train_index, test_index in tscv.split(model_data):
+    #Rest of training process
     ...'''
     st.subheader("Implementation")
     st.code(code, language='python')
