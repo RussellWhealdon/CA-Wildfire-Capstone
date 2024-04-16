@@ -92,7 +92,7 @@ plt.grid(True)
 # Display subplots
 st.pyplot(plt)
 
-st.subheader("Sampling Techniques")
+st.subheader("Sampling")
 
 col1, col2 = st.columns(2)
 
@@ -143,7 +143,7 @@ for train_index, test_index in tscv.split(model_data):
     training_index = train_index
     testing_index = test_index
 
-st.subheader("Training the Model")
+st.subheader("Training Process")
 train_data, test_data = model_data.iloc[train_index], model_data.iloc[test_index]
 
 # Extract features and target variable from training data
@@ -189,7 +189,7 @@ median_absolute_error = sorted(absolute_differences)[len(absolute_differences) /
 col3, col4 = st.columns(2)
 
 with col3: 
-    # Show the result
+    #Show the result
     st.subheader("Error Stats")
     st.write("Median Absolute Error:", median_absolute_error)
     st.write("Decided to use median absolute error due to large values of error stats. More traditional metrics like MSE were very large which made it hard to see improvements in the model")
@@ -210,7 +210,7 @@ with col4:
     st.pyplot(plt)
 
 ### Feature Importance Evaluation ###
-
+st.subheader("Feature Importance Evaluation")
 col5, col6 = st.columns(2)
 
 with col5:
