@@ -229,4 +229,4 @@ with col8:
     explainer = shap.Explainer(final_model_TDLog)
     # Compute SHAP values - this might take some time depending on the size of your data
     shap_values = explainer(X_train)
-
+    shap.summary_plot(shap_values, X_train)
