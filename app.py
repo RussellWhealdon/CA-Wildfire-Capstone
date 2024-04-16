@@ -39,7 +39,6 @@ model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 data_dictionary = pd.read_csv("Data/ClimateProjData - Dictionary.csv")
 
 #Drop/rename columns (XGBoost doesn't accept special characters)
-model_data = model_data.drop(columns = ['Total Acres Burned'])
 model_data['El Nino'] = model_data['El Nino'].replace({'El Nino': 1, 'La Nina': 0})
 model_data = model_data.drop(columns=['Unnamed: 0', 'COUNTY', 'Total Fires', 'Large Fires', 'Total Acres Burned'])
 model_data = model_data.rename(columns={'.25 acres or <':'.25 acres or less', '5000 acres or >':'5000 acres or more'})
