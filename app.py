@@ -253,4 +253,6 @@ with col10:
     # Generate the LIME explanation
     exp = lime_explainer.explain_instance(instance.values, final_model_TDLog.predict)
 
-    exp
+    plt = exp.as_pyplot_figure()
+    st.pyplot(plt)
+
