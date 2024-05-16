@@ -59,8 +59,8 @@ with col1:
     - Some counties have large values for acres burned but little to no economic impact 
     - Same goes for the total number of fires
     - Economic impact largely depends on the location of the fire and nature of the burn
-    - To highlight a specific example, Nevada county tallied the second highest total damage of all counties in California yet shows a fairly small value for total acres burned within the time frame of our data. In this specific instance two deadly 2017 wildfires did almost 2 billion dollars worth of damage to Nevada county, a place not known specifically for being at high risk for this sort of thing. The fires were relatively small, burning roughly 300 acres of land yet destroyed key structures and commercial buildings. Understanding situations like these are key to understanding the nature of wildfire impact. Total Damages by Dollar amount and land burned are both relevant but behave differently as we analyzed their trends
     - Hoping to draw insight from more descrete variables such as weather patterns and fire cause to find trends
+    - To highlight a specific example, Nevada county tallied the second highest total damage of all counties in California yet shows a fairly small value for total acres burned within the time frame of our data. In this specific instance two deadly 2017 wildfires did almost 2 billion dollars worth of damage to Nevada county. The fires were relatively small, burning roughly 300 acres of land yet destroyed key structures and commercial buildings. Understanding situations like these are key to understanding the nature of wildfire impact.
     """)
 with col2:
     st.image("images/TargetVarDist..png")
