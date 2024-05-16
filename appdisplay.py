@@ -28,4 +28,24 @@ model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 data_dictionary = pd.read_csv("Data/ClimateProjData - Dictionary.csv")
 
 
+st.subheader("Overview of Data")
+st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
+st.write("Sources include:")
+st.markdown("- CA Gov - State of California, for Detailed wildfire data including causes, size of fires, and damages")
+st.markdown("- NRI - FEMA’s National Risk Index, for general overview of the areas at risk of wildfires relative to the entire nation")
+st.markdown("- NCEI & NOAA, for environmental data including rainfall, temperature, and weather patterns.")
+st.markdown('''
+<style>
+[data-testid="stMarkdownContainer"] ul{
+    list-style-position: inside;
+}
+</style>
+''', unsafe_allow_html=True)
+with st.expander("See Data Preview"):
+    st.write(raw_data)
+with st.expander("See Data Dictionary"):
+    st.write(data_dictionary)
+
+
+
 
