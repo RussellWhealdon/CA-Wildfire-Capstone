@@ -117,6 +117,6 @@ with col6:
 
 
 
-    """
+    """)
     st.image("images/CorrelationPercentiles.png")
 
