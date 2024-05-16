@@ -87,17 +87,31 @@ with col4:
 ### Correlation percentile analyis
 col5, col6 = st.columns(2)
 with col5:
-    st.markdown("This plot shows the correlation scores between our feature and target variables.")
+    st.subheader("Distribution of Total Dollar Damage")
+     st.markdown("The boxplot dispalys the distribution of Total Dollar Damage at Log scale")
     st.markdown("""
-    - Majority of correlation scores are low, further emphasizing the complex nature of this dataset
-    - Can see relevance of fire causes and some environmental factors
-    - Number of fires of the size 5000 acres or greater seems to be more relevant than the total number of fires.
-    - Although some variables did not show high values of correlation, this is only one type of relationship with others being exponential, temporal and geographic which we will evaluate in further sections.
+    - The distribution of Total Dollar Damage is quite large and ranges from 0 all the way to roughly 4 billion dollars
+    - The greater majority of data points are 0-1 million dollars
+    - Traditionally, we would remove outliers before modeling but in this case the outliers are key points of information 
+    - Understanding them is what will drive the value of this analysis.
     """)
 
 with col6: 
     st.image("images/BoxPlotTDD.png")
+
+### Correlation percentile analyis
+col5, col6 = st.columns(2)
+with col5:
+    st.subheader("Percentile Correlation Analysis")
+    st.markdown("The plot shows a preview of correlation scores between our target and feature variables across different percetiles of Total Dollar Damage")
+    st.markdown("""
+    - The 99% percentile would be fires with the most damage where as the 10% would be the smaller end
+    - Figured relationships may differ at lower or higher ends of the distribution
+    - The majority of the values are on the lower end of the percentiles with large jumps existing between the 90th and 95th percentiles. 
+    - We can see large jumps in certain variables like “Elec. Power” and “Debris Burning” meaning that they may be more prevalent in the high-damage events
+    - Increase in the building and agricultural values as we move into the higher percentiles. This may indicate that regions that stand more to lose are inherently more vulnerable to large damages
+    """)
+
+with col6: 
     st.image("images/CorrelationPercentiles.png")
-
-
 
