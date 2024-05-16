@@ -126,4 +126,4 @@ with col7:
     - This shows the need for governemnt intervention as a means of lower fire totals
     """)
 with col8:
-    st.image("images/FireCasuse_OT.png")
+    st.image("images/FireCauses_OT.png")
