@@ -131,7 +131,7 @@ with col8:
 
 ### Modeling 
 st.markdown(f"<h2 style='text-align: center;'>Modeling</h2>", unsafe_allow_html=True)
-st.markdown("In working with our sponsors they mentioned they wanted to incorporate some sort of Mahine Learning methodologies with the hopes of understanding the impact of different features in this dataset on Total Dollar Damage. Prior effforts had been made to use such methodolgies as Linear Multi-Variable Regressions but both lacked the complexity to deal with a dataset such as this.")
+st.markdown("    In working with our sponsors they mentioned they wanted to incorporate some sort of Mahine Learning methodologies with the hopes of understanding the impact of different features in this dataset on Total Dollar Damage. Prior effforts had been made to use such methodolgies as Linear Multi-Variable Regressions but both lacked the complexity to deal with a dataset such as this.")
 
 
 
