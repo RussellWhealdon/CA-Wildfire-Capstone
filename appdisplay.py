@@ -46,6 +46,7 @@ with st.expander("See Data Preview"):
 with st.expander("See Data Dictionary"):
     st.write(data_dictionary)
 
+st.subheader("Exploratory Analysis")
 
 
 
