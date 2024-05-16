@@ -184,12 +184,18 @@ Networks or SVMs.
 ### Model Output
 col11, col12 = st.columns(2)
 with col11:
-    st.subheader("Model Output - Shapley Values")
+    st.subheader("Model Output - Shapley Values (Global)")
+    st.markdown("""  
+    A Shapley value summary plot is a visualization tool used in machine learning to interpret the output of models, particularly those involving complex algorithms like 
+    tree ensembles or neural networks. It is based on Shapley values, a concept from cooperative game theory that allocates payouts (in this case, prediction impact) fairly 
+    among contributors (features).
+    """)
     st.markdown("""
-    An XGBoost regressor is a powerful machine learning model for regression tasks, using gradient boosting techniques. It builds on an ensemble of decision trees 
-    sequentially, each correcting its predecessor, and incorporates regularization to prevent overfitting. XGBoost is known for its high performance and efficiency with 
-    large datasets. We thought it would be effective here becuase of it's ability to handle complex data but still offers more interpretability than models like Nueral 
-    Networks or SVMs.
+    Interpretation:
+    - Feature Importance: Features at the top of the plot are generally more important to the model’s output than those at the bottom.
+    - Positive or Negative Impact: If most dots for a feature are to the right of the center, this feature generally pushes predictions higher. Conversely, dots to the left suggest a tendency to lower predictions.
+    - Value Effect: The color of the dots can help you understand if higher or lower values of the feature increase or decrease the output. For example, if high values of a feature (indicated by one color) are mostly on the right, high values increase the prediction value.
+    - Consistency: A tightly clustered group of dots indicates that a feature has a consistent effect on the prediction across different data points, while a widely spread group indicates variability in its impact.
     """)
 
 with col12:
