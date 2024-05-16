@@ -135,7 +135,9 @@ st.markdown("""
 In working with our sponsors they mentioned they wanted to incorporate some sort of Mahine Learning methodologies with the hopes of understanding the impact of different 
 features in this dataset on Total Dollar Damage. Prior effforts had been made to use methodolgies like Linear Regression but those lacked the complexity 
 to deal with a dataset such as this. Some things we knew we need to account for were the aspect of time and the distribution of the target variable making our sampling methods
-and transformations important as we began to build things out.
+and transformations important as we began to build things out. It's important to note that our intentions here are to model for the purpose of explainability not necessarily 
+predictability. Wildfires are so sporadic that trying to predict their damage accurately would be unresonable. However, we do feel value can be gained from builing a model
+tailered to showing how features are impacting the degree of damage. 
 """)
 
 ### Transformation
@@ -171,7 +173,14 @@ with col10:
     st.image("images/WalkForwardValidationDiagram.png")
 
 
+### Sampling Methods
+col9, col10 = st.columns(2)
+with col9:
+    st.subheader("Model Output - Shapley Values")
+    st.markdown(""" """)
 
+with col10:
+    st.image("images/WalkForwardValidationDiagram.png")
 
 
 
