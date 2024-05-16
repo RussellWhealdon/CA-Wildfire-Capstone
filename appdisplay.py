@@ -155,7 +155,6 @@ with col8:
     st.markdown("")
     st.image("images/TransDist..png")
 
-
 ### Sampling Methods
 col9, col10 = st.columns(2)
 with col9:
@@ -182,6 +181,7 @@ Networks or SVMs.
 """)
 
 ### Model Output
+### Shapley
 col11, col12 = st.columns(2)
 with col11:
     st.subheader("Model Output - Shapley Values (Global)")
@@ -198,6 +198,7 @@ with col11:
     - Consistency: A tightly clustered group of dots indicates that a feature has a consistent effect on the prediction across different data points, while a widely spread group indicates variability in its impact.
     """)
 
+### LIME
 with col12:
     st.image("images/ShapleyValueOutput.png")
 
@@ -217,5 +218,18 @@ with col13:
     - Visualization: Length and direction of the bars indicate the strength and direction of each feature's influence on the prediction.""")
 with col14:
     st.image("images/LIMEExpl..png")
+
+### Recomendations
+st.markdown(f"<h2 style='text-align: center;'>Recommendations and Considerations</h2>", unsafe_allow_html=True)
+st.subheader("Recommednation for Sponsors and Stakeholders")
+st.markdown("""  
+- Enhance Regulatory Measures to Prevent Human-Caused Fires
+Human activity significantly contributes to wildfire incidents. Implementing stricter regulations and more severe penalties can effectively mitigate these human-induced factors.
+- Enhance Fire Mitigation for Electrical Power Sources
+Fires originating from electrical power, particularly in rural regions, tend to be highly destructive. Transitioning power lines underground, as practiced in various 
+locales, is a proven strategy to mitigate such risks effectively.
+- Improve Fire Response Times and Containment Measures
+Our data suggests that controlling fire escalation is more critical than frequency. Implementing strategies like drone-assisted initial response is essential for effective fire management.
+    """)
 
 
