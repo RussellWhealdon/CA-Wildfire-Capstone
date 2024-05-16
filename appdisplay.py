@@ -52,8 +52,14 @@ st.markdown(f"<h3 style='text-align: center;'>Exploratory Analysis</h3>", unsafe
 ### Dollar Damage, Acres Burned, and Total Fires summed across Counties
 col1, col2 = st.columns(2)
 with col1:
-    st.subheader("Dollar Damage, Acres Burned, and Total Fires summed across Counties")
-    st.markdown("Information about this image I'm about to show")
+    st.subheader("Key Variables Summed Across Counties")
+    st.markdown("This plot shows the total Dollar Damage, Acres Burned, and Number of Fires for each county for the entire time period of our dataset.")
+    st.markdown("""
+    - Reflects the sporadic nature of wildfire impact across counties
+    - Some counties have large values for acres burned but little to no economic impact 
+    - Same goes for the total number of fires
+    - Economic impact largely depends on the location of the fire and nature of the burn
+    """)
 
 with col2:
     st.image("images/TargetVarDist..png")
