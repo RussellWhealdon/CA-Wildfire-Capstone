@@ -127,3 +127,10 @@ with col7:
     """)
 with col8:
     st.image("images/FireCauses_OT.png")
+
+
+### Modeling 
+st.markdown(f"<h2 style='text-align: center;'>Modeling</h2>", unsafe_allow_html=True)
+st.markdown("")
+
+
