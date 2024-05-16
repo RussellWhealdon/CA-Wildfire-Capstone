@@ -141,7 +141,7 @@ and transformations important as we began to build things out.
 ### Transformation
 col7, col8 = st.columns(2)
 with col7:
-    st.subheader("Target Variable Transformation")
+    st.subheader("Target Variable Log Transformation")
     st.markdown("""
     Although the XGBoost Regressor model does not assume that the data be normally distributed, the variance of our target variable was causing unstable predictions that did 
     not capture the true nature of the dataset. In order to account for this, we used log transformation to lessen the range of our target variables. A visual representation 
@@ -152,6 +152,26 @@ with col7:
 with col8:
     st.markdown("")
     st.image("images/TransDist..png")
+
+
+### Sampling Methods
+col9, col10 = st.columns(2)
+with col9:
+    st.subheader("Sampling Methodology - Walk Forward Validation")
+    st.markdown("""
+    In order to ensure that our model was not shown data that it otherwise wouldn’t have in a real world setting we needed to control for the element of time. To do this 
+    we used a method of sampling called walk-forward validation. This is where you split the data based on the time column, putting the newer values in the testing set and 
+    the older values in the training set. The same basic principles apply by putting the majority of data in the training set and vice versa for testing. The other issue we 
+    had with our data was that we had a relatively small sample size of about 750 rows. This was due to the fact that we were only able to collect data at the County level 
+    rather than at each instance of wildfire. This reflects the grander issue that wildfires pose. They are hard to track from a damage perspective and the cause and true 
+    size are often hard to evaluate. Nonetheless, to address this issue we used cross validation to give our model a better chance to pick up on trends by seeing different 
+    groupings of rows through multiple iterations.""")
+
+with col10:
+    st.image("images/WalkForwardValidationDiagram.png")
+
+
+
 
 
 
