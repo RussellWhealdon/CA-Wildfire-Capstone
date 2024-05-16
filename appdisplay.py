@@ -178,10 +178,22 @@ st.markdown("""
 An XGBoost regressor is a powerful machine learning model for regression tasks, using gradient boosting techniques. It builds on an ensemble of decision trees 
 sequentially, each correcting its predecessor, and incorporates regularization to prevent overfitting. XGBoost is known for its high performance and efficiency with 
 large datasets. We thought it would be effective here becuase of it's ability to handle complex data but still offers more interpretability than models like Nueral 
-Networks or SVM.
+Networks or SVMs.
 """)
 
+### Model Output
+col11, col12 = st.columns(2)
+with col11:
+    st.subheader("Model Output - Shapley Values")
+    st.markdown("""
+    An XGBoost regressor is a powerful machine learning model for regression tasks, using gradient boosting techniques. It builds on an ensemble of decision trees 
+    sequentially, each correcting its predecessor, and incorporates regularization to prevent overfitting. XGBoost is known for its high performance and efficiency with 
+    large datasets. We thought it would be effective here becuase of it's ability to handle complex data but still offers more interpretability than models like Nueral 
+    Networks or SVMs.
+    """)
 
+with col12:
+    
 
 
 
