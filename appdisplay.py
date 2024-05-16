@@ -145,7 +145,7 @@ with col7:
     st.markdown("""Blah Blah""")
 
 with col8:
-    st.image("TransDist..png")
+    st.image("images/TransDist..png")
 
 
 
