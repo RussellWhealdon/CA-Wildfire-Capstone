@@ -59,8 +59,8 @@ with col1:
     - Some counties have large values for acres burned but little to no economic impact 
     - Same goes for the total number of fires
     - Economic impact largely depends on the location of the fire and nature of the burn
+    - Hoping to draw insight from more descrete variables such as weather patterns and fire cause to find trends
     """)
-
 with col2:
     st.image("images/TargetVarDist..png")
 
