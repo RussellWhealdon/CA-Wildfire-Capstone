@@ -77,7 +77,7 @@ with col4:
     minicol1, minicol2 = st.columns(2)
     with minicol1:
         st.image("images/CorrelationScore.png")
-        #st.image("images/CorrelationPercentiles.png")
+    st.image("images/CorrelationPercentiles.png")
 
 
 
