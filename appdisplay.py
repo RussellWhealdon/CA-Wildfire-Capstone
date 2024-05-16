@@ -48,5 +48,15 @@ with st.expander("See Data Dictionary"):
 
 st.subheader("Exploratory Analysis")
 
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("Information about this image I'm about to show")
+
+with col2:
+    st.image("images/TargetVarDist..png")
+
+
+
 
 
