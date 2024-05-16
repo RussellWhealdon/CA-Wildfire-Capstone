@@ -193,7 +193,7 @@ with col11:
     """)
 
 with col12:
-    
+    st.image("images/ShapleyValueOutput.png")
 
 
 
