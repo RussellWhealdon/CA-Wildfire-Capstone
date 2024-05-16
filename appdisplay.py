@@ -150,6 +150,7 @@ with col7:
     which we believe to be because of the change in distribution.""")
 
 with col8:
+    st.markdown("")
     st.image("images/TransDist..png")
 
 
