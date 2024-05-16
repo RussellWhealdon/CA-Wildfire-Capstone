@@ -73,7 +73,7 @@ col3, col4 = st.columns(2)
 with col3:
     st.subheader("Key Variables Summed Across Counties")
     st.markdown("This plot shows the total Dollar Damage, Acres Burned, and Number of Fires for each county for the entire time period of our dataset.")
-with col2:
+with col4:
     st.image("images/CorrelationScore.png")
     st.image("images/CorrelationPercentiles.png")
 
