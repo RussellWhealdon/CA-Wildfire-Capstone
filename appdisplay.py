@@ -115,3 +115,15 @@ with col5:
 with col6: 
     st.image("images/CorrelationPercentiles.png")
 
+### Evaluation of Fire Causes
+col7, col8 = st.columns(2)
+with col7:
+    st.subheader("Fire Cause Analysis")
+    st.markdown("The plot shows the totals for categories of fire causes over the timeframe of our dataset")
+    st.markdown("""
+    - From this we can see that Man-made fires has seen a steady uptick in recent years
+    - Natural causes have suprisingly declined 
+    - This shows the need for governemnt intervention as a means of lower fire totals
+    """)
+with col8:
+    st.image("images/FireCauses_OT.png")
