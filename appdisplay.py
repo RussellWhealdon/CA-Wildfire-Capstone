@@ -18,11 +18,12 @@ st.markdown(f"<h1 style='text-align: center;'>California Wildfire Damage Analysi
     
 ### Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
-st.markdown(f"<h2 style='text-align: center;'>Introduction</h2>", unsafe_allow_html=True)
 st.markdown("""
 This site presents the work from my Capstone project for my Masters in Business Analytics Program. This work was done in unison with our Sponsors from the 
 Delloite Sustainability Arm and our Professors from the Georgetown McDonough School of Business. I hope you find the analysis to be interesting and insightful!
 """)
+st.markdown(f"<h2 style='text-align: center;'>Introduction</h2>", unsafe_allow_html=True)
+
 st.markdown("""
 This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to 
 understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an 
