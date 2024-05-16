@@ -48,7 +48,7 @@ with st.expander("See Data Dictionary"):
 
 ### Exploratory Analysis
 st.markdown(f"<h2 style='text-align: center;'>Exploratory Analysis</h2>", unsafe_allow_html=True)
-
+st.markdown("")
 
 ### Dollar Damage, Acres Burned, and Total Fires summed across Counties
 col1, col2 = st.columns(2)
@@ -68,10 +68,10 @@ with col2:
 
 
 ### Correlation Score for TDD and Correlation percentile analyis
-
+st.markdown("")
 col3, col4 = st.columns(2)
 with col3:
-    st.subheader("Key Variables Summed Across Counties")
+    st.subheader("Correlation Analysis")
     st.markdown("This plot shows the total Dollar Damage, Acres Burned, and Number of Fires for each county for the entire time period of our dataset.")
 with col4:
     minicol1, minicol2 = st.columns(2)
