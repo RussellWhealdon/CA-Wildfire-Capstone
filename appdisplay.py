@@ -49,6 +49,7 @@ with st.expander("See Data Dictionary"):
 ### Exploratory Analysis
 st.markdown(f"<h2 style='text-align: center;'>Exploratory Analysis</h2>", unsafe_allow_html=True)
 
+
 ### Dollar Damage, Acres Burned, and Total Fires summed across Counties
 col1, col2 = st.columns(2)
 with col1:
@@ -65,6 +66,8 @@ with col1:
 with col2:
     st.image("images/TargetVarDist..png")
 
+
+### 
 
 
 
