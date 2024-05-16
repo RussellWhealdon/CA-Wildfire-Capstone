@@ -172,15 +172,15 @@ with col9:
 with col10:
     st.image("images/WalkForwardValidationDiagram.png")
 
+### Model Training
+st.subheader("Model Training - XG Boost Regressor")
+st.markdown("""
+An XGBoost regressor is a powerful machine learning model for regression tasks, using gradient boosting techniques. It builds on an ensemble of decision trees 
+sequentially, each correcting its predecessor, and incorporates regularization to prevent overfitting. XGBoost is known for its high performance and efficiency with 
+large datasets. We thought it would be effective here becuase of it's ability to handle complex data but still offers more interpretability than models like Nueral 
+Networks or SVM.
+""")
 
-### Sampling Methods
-col9, col10 = st.columns(2)
-with col9:
-    st.subheader("Model Output - Shapley Values")
-    st.markdown(""" """)
-
-with col10:
-    st.image("images/WalkForwardValidationDiagram.png")
 
 
 
