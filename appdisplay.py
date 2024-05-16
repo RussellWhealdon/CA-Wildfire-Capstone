@@ -113,10 +113,8 @@ with col5:
     """)
 
 with col6: 
-    st.markdown("""
-
-
-
-    """)
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
     st.image("images/CorrelationPercentiles.png")
 
