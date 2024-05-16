@@ -223,13 +223,10 @@ with col14:
 st.markdown(f"<h2 style='text-align: center;'>Recommendations and Considerations</h2>", unsafe_allow_html=True)
 st.subheader("Recommednation for Sponsors and Stakeholders")
 st.markdown("""  
-- Enhance Regulatory Measures to Prevent Human-Caused Fires
-Human activity significantly contributes to wildfire incidents. Implementing stricter regulations and more severe penalties can effectively mitigate these human-induced factors.
-- Enhance Fire Mitigation for Electrical Power Sources
-Fires originating from electrical power, particularly in rural regions, tend to be highly destructive. Transitioning power lines underground, as practiced in various 
+- Enhance Regulatory Measures to Prevent Human-Caused Fires. Human activity significantly contributes to wildfire incidents. Implementing stricter regulations and more severe penalties can effectively mitigate these human-induced factors.
+- Enhance Fire Mitigation for Electrical Power Sources. Fires originating from electrical power, particularly in rural regions, tend to be highly destructive. Transitioning power lines underground, as practiced in various 
 locales, is a proven strategy to mitigate such risks effectively.
-- Improve Fire Response Times and Containment Measures
-Our data suggests that controlling fire escalation is more critical than frequency. Implementing strategies like drone-assisted initial response is essential for effective fire management.
+- Improve Fire Response Times and Containment Measure. Our data suggests that controlling fire escalation is more critical than frequency. Implementing strategies like drone-assisted initial response is essential for effective fire management.
     """)
 
 
