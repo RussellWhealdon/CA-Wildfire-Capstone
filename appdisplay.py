@@ -88,7 +88,7 @@ with col4:
 col5, col6 = st.columns(2)
 with col5:
     st.subheader("Distribution of Total Dollar Damage")
-     st.markdown("The boxplot dispalys the distribution of Total Dollar Damage at Log scale")
+    st.markdown("The boxplot dispalys the distribution of Total Dollar Damage at Log scale")
     st.markdown("""
     - The distribution of Total Dollar Damage is quite large and ranges from 0 all the way to roughly 4 billion dollars
     - The greater majority of data points are 0-1 million dollars
