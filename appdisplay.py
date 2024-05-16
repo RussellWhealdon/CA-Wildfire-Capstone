@@ -231,5 +231,10 @@ locales, is a proven strategy to mitigate such risks effectively.
 - Be Cognizant Wildfire Cycles and Weather Patterns. Recognizing the cyclical nature of wildfires and related weather patterns is crucial. Collaborating with environmental groups to monitor and manage these elements is recommended.
 - Stronger Data Collection and Utilization Systems. Leveraging data analysis and machine learning is key in combating wildfires. Prioritizing the collection and effective use of data is essential for ongoing efforts.
 """)
-
+st.subheader("Considerations and Future Scope")
+st.markdown("""  
+- Tackling Wildfire Complexity: Our research confronts one of humanity's most intricate challenges, aiming to demystify wildfire impacts and set a groundwork for ongoing analysis, rather than providing an immediate solution to the wildfire crisis.
+- Data Collection Constraints: Limited by time and access, our current dataset could be enriched with extended time frames and additional features to elevate the study's depth.
+- Machine Learning Prospects: Expanded datasets and additional time could enable other advanced modeling techniques, such as forecasting and classification, offering diverse insights and solutions for various facets of the wildfire crisis.
+""")
 
