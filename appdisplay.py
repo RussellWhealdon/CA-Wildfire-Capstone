@@ -96,7 +96,7 @@ with col5:
     """)
 
 with col6: 
-    st.image("images/TargetVarDist..png")
+    st.image("images/BoxPlotTDD.png")
     st.image("images/CorrelationPercentiles.png")
 
 
