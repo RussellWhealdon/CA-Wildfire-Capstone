@@ -18,7 +18,7 @@ st.markdown(f"<h1 style='text-align: center;'>California Wildfire Damage Analysi
     
 ### Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
-st.markdown(f"<h3 style='text-align: center;'>Introduction</h3>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align: center;'>Introduction</h2>", unsafe_allow_html=True)
 st.write("This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for model interpretability.")
 
 #### Load in data
@@ -27,7 +27,7 @@ model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 data_dictionary = pd.read_csv("Data/ClimateProjData - Dictionary.csv")
 
 ### Data Overview
-st.markdown(f"<h3 style='text-align: center;'>Overview of Data</h3>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align: center;'>Overview of Data</h2>", unsafe_allow_html=True)
 st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
 st.write("Sources include:")
 st.markdown("- CA Gov - State of California, for Detailed wildfire data including causes, size of fires, and damages")
@@ -47,7 +47,7 @@ with st.expander("See Data Dictionary"):
 
 
 ### Exploratory Analysis
-st.markdown(f"<h3 style='text-align: center;'>Exploratory Analysis</h3>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align: center;'>Exploratory Analysis</h2>", unsafe_allow_html=True)
 
 ### Dollar Damage, Acres Burned, and Total Fires summed across Counties
 col1, col2 = st.columns(2)
