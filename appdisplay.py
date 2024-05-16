@@ -227,6 +227,9 @@ st.markdown("""
 - Enhance Fire Mitigation for Electrical Power Sources. Fires originating from electrical power, particularly in rural regions, tend to be highly destructive. Transitioning power lines underground, as practiced in various 
 locales, is a proven strategy to mitigate such risks effectively.
 - Improve Fire Response Times and Containment Measure. Our data suggests that controlling fire escalation is more critical than frequency. Implementing strategies like drone-assisted initial response is essential for effective fire management.
-    """)
+- Increase Wildfire Education in Schools. Educating the next generation about wildfires and their causes is vital to reduce human-induced impacts and prevent future damages.
+- Be Cognizant Wildfire Cycles and Weather Patterns. Recognizing the cyclical nature of wildfires and related weather patterns is crucial. Collaborating with environmental groups to monitor and manage these elements is recommended.
+- Stronger Data Collection and Utilization Systems. Leveraging data analysis and machine learning is key in combating wildfires. Prioritizing the collection and effective use of data is essential for ongoing efforts.
+""")
 
 
