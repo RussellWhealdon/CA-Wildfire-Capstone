@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+### Set Page config
 st.set_page_config(page_title= f"CA Wildfire Dash",page_icon="🧑‍🚀",layout="wide")
 
+### Set Background image
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
@@ -11,23 +13,20 @@ background-size: cover;
 }
 </style>
 """
-
+### Big title
 st.markdown(f"<h1 style='text-align: center;'>California Wildfire Damage Analysis</h1>", unsafe_allow_html=True)
     
-# Introduction section
+### Introduction section
 st.markdown(page_bg_img, unsafe_allow_html=True)
 st.markdown(f"<h3 style='text-align: center;'>Introduction</h3>", unsafe_allow_html=True)
 st.write("This dashboard presents an analysis of the economic impacts of wildfires, developed in collaboration with Deloitte's sustainability arm. The project aims to understand and predict the financial damages caused by wildfires, leveraging data on various environmental and economic factors. The predictive modeling was done using an XGBoost regression model, enhanced with SHAP and LIME for model interpretability.")
 
-# Rest of the app here
-# Display data, interactive widgets, visualizations, etc.
-
-#Load in data
+#### Load in data
 raw_data = pd.read_csv('Data/ClimateProjData.csv')
 model_data = pd.read_excel('Data/climateprojdata_final.xlsx')
 data_dictionary = pd.read_csv("Data/ClimateProjData - Dictionary.csv")
 
-
+### Data Overview
 st.markdown(f"<h3 style='text-align: center;'>Overview of Data</h3>", unsafe_allow_html=True)
 st.write("The data provided shows the impact of wildfires in counties across California aggregated by year, as well as charactersitcs related to each county including size, climate, and risk metrics.")
 st.write("Sources include:")
@@ -46,11 +45,14 @@ with st.expander("See Data Preview"):
 with st.expander("See Data Dictionary"):
     st.write(data_dictionary)
 
+
+### Exploratory Analysis
 st.markdown(f"<h3 style='text-align: center;'>Exploratory Analysis</h3>", unsafe_allow_html=True)
 
+### Dollar Damage, Acres Burned, and Total Fires summed across Counties
 col1, col2 = st.columns(2)
-
 with col1:
+    st.subheader("Dollar Damage, Acres Burned, and Total Fires summed across Counties")
     st.markdown("Information about this image I'm about to show")
 
 with col2:
