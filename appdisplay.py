@@ -74,8 +74,8 @@ with col3:
     st.subheader("Key Variables Summed Across Counties")
     st.markdown("This plot shows the total Dollar Damage, Acres Burned, and Number of Fires for each county for the entire time period of our dataset.")
 with col4:
-    minicol1, minicol2, minicol3 = st.columns(3)
-    with minicol2:
+    minicol1, minicol2 = st.columns(2)
+    with minicol1:
         st.image("images/CorrelationScore.png")
     st.image("images/CorrelationPercentiles.png")
 
