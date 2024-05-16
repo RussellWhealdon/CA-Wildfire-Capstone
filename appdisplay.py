@@ -143,7 +143,7 @@ col7, col8 = st.columns(2)
 with col7:
     st.subheader("Target Variable Transformation")
     st.markdown("""
-    Although the XGBoost Regressor model does not assume that the data be normally distributed the variance of our target variable was causing unstable predictions that did 
+    Although the XGBoost Regressor model does not assume that the data be normally distributed, the variance of our target variable was causing unstable predictions that did 
     not capture the true nature of the dataset. In order to account for this, we used log transformation to lessen the range of our target variables. A visual representation 
     of this can be seen in the appendix. The log transformation takes the log form of each target variable before the model gets trained. Once we have our predictions for 
     the model, we then transform the predictions back to their original scale to evaluate the model's performance. We saw more accurate and stable predictions for our models 
