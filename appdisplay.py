@@ -72,7 +72,13 @@ st.markdown("")
 col3, col4 = st.columns(2)
 with col3:
     st.subheader("Correlation Analysis")
-    st.markdown("This plot shows the total Dollar Damage, Acres Burned, and Number of Fires for each county for the entire time period of our dataset.")
+    st.markdown("This plot shows the correlation scores between our feature and target variables.")
+    st.markdown("""
+    - Majority of correlation scores are low, further emphasizing the complex nature of this dataset
+    - Can see relevance of fire causes and some environmental factors
+    - Number of fires of the size 5000 acres or greater seems to be more relevant than the total number of fires.
+    - Although some variables did not show high values of correlation, this is only one type of relationship with others being exponential, temporal and geographic which we will evaluate in further sections.
+    """)
 with col4:
     minicol1, minicol2 = st.columns(2)
     with minicol1:
