@@ -22,7 +22,7 @@ st.markdown(f"<h2 style='text-align: center;'>Introduction</h2>", unsafe_allow_h
 st.markdown("""
 This is the paper from my Capstone project for my Masters in Business Analytics Program. This work was done in unison with our sponsors from the 
 Delloite Sustainability Arm and our professors from the Georgetown McDonough School of Business. They tasked us in furthering an analysis they had been working on where they
-were trying to leverage data to better understand the economic impact of wildfires in Caifornia. We performed a robusted exloratory analysis on this dataset and then modeled
+were trying to leverage data to better understand the economic impact of wildfires in Caifornia. We performed a robust exloratory analysis on this dataset and then modeled
 out damages using an XG Boost Regressor Model. Feature Importance Methods were then used to give more insight into the overall issue. I hope you find the analysis to be 
 interesting and insightful!
 """)
